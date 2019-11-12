@@ -1,0 +1,42 @@
+  p {
+  margin: 0;
+}
+
+table {
+  button {
+    height: 4em;
+    width: 4em;
+  }
+
+  .title {
+    vertical-align: middle;
+  }
+
+  .position {
+    border: .1px solid silver;
+    height: .5em;
+    width: 2em;
+
+    .play {
+      background-color: rgb(107, 249, 154);
+    }
+  }
+}
+
+.beat {
+  background-color: black;
+  // padding: 10px;
+  border: 2px solid silver;
+  border-radius: .7em;
+  cursor: pointer;
+}
+
+.on {
+  background-color: red;
+  border-color: red;
+}
+
+.ticked {
+  background-color: white;
+  border-color: white;
+}
