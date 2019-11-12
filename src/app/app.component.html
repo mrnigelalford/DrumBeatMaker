@@ -4,17 +4,25 @@
     Welcome to {{ title }}!
   </h1>
 
-  <table style="margin:0 auto;">
+  <table #drumPad style="margin:0 auto;">
     <ng-container>
-    <tr>
-    <p></p>
-      <td class="position" *ngFor="let len of bars"></td>
-    </tr>
-      <tr *ngFor="let sound of Sounds, index">
-      <p class="title">{{sound.title}}</p>
-        <td *ngFor="let len of bars">
-          <button class="beat"></button>
+      <tr>
+        <p></p>
+        <td [ngClass]="{position: true, play: _currentBar === i+1}" *ngFor="let len of bars; index as i"></td>
+      </tr>
+      <tr *ngFor="let instrument of Instruments">
+        <p class="title">{{instrument.title}}</p>
+        <td *ngFor="let len of bars; index as i">
+          <button
+            #pad
+             [ngClass]="{beat: true, on: pad.active}"
+             (click)="toggleStatus({position: i, title: instrument.title, _id: instrument.title+i, active: true, location: instrument.location}); pad.active = !pad.active"></button>
         </td>
       </tr>
     </ng-container>
   </table>
+
+  <button (click)="playPause()">Play/Pause</button>
+  <h2>Set Custom BPM</h2>
+  <input [(ngModel)]="bpm" (input)="bpm = $event.target.value">
+  <button (click)="updateBPM(bpm)">Set BPM</button>
