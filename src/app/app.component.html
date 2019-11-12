@@ -23,6 +23,8 @@
   </table>
 
   <button (click)="playPause()">Play/Pause</button>
-  <h2>Set Custom BPM</h2>
+
+
+  <h2>BONUS: Set Custom BPM</h2>
   <input [(ngModel)]="bpm" (input)="bpm = $event.target.value">
   <button (click)="updateBPM(bpm)">Set BPM</button>

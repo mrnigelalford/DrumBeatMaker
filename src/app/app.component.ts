@@ -104,7 +104,7 @@ export class AppComponent {
 
   _sampleRate = 44100;
   _minuteInSeconds = 60;
-  _beatsPerMinute = 140;
+  _beatsPerMinute = 120;
   _totalSteps = 16;
 
   _stepDelay;
