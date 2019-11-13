@@ -3,5 +3,5 @@ export class pad {
   location: String;
   active: Boolean;
   position?: number;
-  _id:? number;
+  _id?: number;
 }

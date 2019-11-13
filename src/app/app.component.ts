@@ -10,9 +10,7 @@ export class AppComponent {
   @ViewChild('drumPad', {static: false})
   drumPad: ElementRef;
 
-  bars = Array(16)
-    .fill()
-    .map((x, i) => i);
+  bars = Array.from(Array(16).keys())
   beat
 
   Instruments = [
